@@ -25,5 +25,3 @@ def logs(msg):
     with open('logs.txt', 'a+') as f:
         now = time.strftime("%Y-%m-%d %H:%M")
         f.write(f'$ {now}: {msg}\n')
-
-
