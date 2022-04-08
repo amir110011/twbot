@@ -1,0 +1,4 @@
+# app logs:
+$ 2022-04-08 04:24: 'Client' object has no attribute 'cvreate_tweet'
+$ 2022-04-08 04:27: twitt created ( test
+ )

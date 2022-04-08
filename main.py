@@ -1,5 +1,7 @@
 import tweepy
 from info import *
+from menu import selected
+from defs import new_twitt, logs
 # autenticat to twitter
 
 # read the keys from info.py
@@ -9,8 +11,17 @@ client = tweepy.Client(
     access_token=access_token, access_token_secret=access_token_secret
 )
 
-# Create Tweet
-try:
-    response = client.create_tweet(text="This Tweet was Tweeted using Tweepy and Twitter API v2!")
-except:
-    print("Error: Tweet not created")
+if selected == '1':
+    # Create Tweet
+    try:
+        text = new_twitt()
+        response = client.create_tweet(text=text)
+        logs(f'twitt created ( {text} )')
+        print("Message: Tweet created")
+
+    except Exception as error:
+        error_string = str(error)
+        logs(f'{error_string}')
+        print("Error: {}".format(error_string))
+else:
+    print("Error: invalid option")
